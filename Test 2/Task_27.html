@@ -1,0 +1,36 @@
+<!-- Q27. Write a Java Script Program to create Counter Program using setInterval() method. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Program</title>
+</head>
+<body>
+    <!-- Display counter value -->
+    <h1 id="counter">0</h1>
+    
+    <!-- Start and stop buttons -->
+    <button onclick="startCounter()">Start Counter</button>
+    <button onclick="stopCounter()">Stop Counter</button>
+
+    <script>
+        let counter = 0; // Initialize counter variable
+        let interval; // Variable to store the interval
+
+        // Function to start the counter
+        function startCounter() {
+            interval = setInterval(function() {
+                counter++; // Increment counter
+                document.getElementById("counter").innerText = counter; // Update counter display
+            }, 1000); // Run function every 1000 milliseconds (1 second)
+        }
+
+        // Function to stop the counter
+        function stopCounter() {
+            clearInterval(interval); // Clear the interval to stop the counter
+        }
+    </script>
+</body>
+</html>

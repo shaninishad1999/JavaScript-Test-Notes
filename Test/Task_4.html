@@ -1,0 +1,33 @@
+<!-- Q4. Write a JavaScript conditional statement to find the sign of product of three numbers.
+  Display an alert box with the specified sign.     
+  -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+  </head>
+  <body>
+    
+
+
+    <script>
+        function findSignOfProduct(num1, num2, num3) {
+    let product = num1 * num2 * num3;
+
+    if (product > 0) {
+        alert("The sign of the product is positive (+).");
+    } else if (product < 0) {
+        alert("The sign of the product is negative (-).");
+    } else {
+        alert("The product is zero (0).");
+    }
+}
+
+// Example usage:
+findSignOfProduct(2, -3, 4); // This will display an alert with "The sign of the product is negative (-)."
+
+    </script>
+  </body>
+  </html>

@@ -1,0 +1,72 @@
+<!-- Q30. Write a JavaScript program to create an image changes that displayed   
+ different image when a  firstButton  or  SecondButton button is clicked.  -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Changer</title>
+    <style>
+        #imageContainer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #myImage {
+            max-width: 100%;
+            height: auto;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+        button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="imageContainer">
+        <img id="myImage" src="image1.webp" alt="Image">
+    </div>
+    <div class="button-container">
+        <button onclick="fun1()">Show First Image</button>
+        <button onclick="fun2()">Show Second Image</button>
+    </div>
+
+<script>
+    function fun1(){
+       let k= document.getElementById("myImage");
+       myImage.src=""
+    }
+</script>
+
+
+<!-- 
+    <script>
+        // Define the image sources
+        const image1 = '/image1.webp';
+        const image2 = '/image2.jpg';
+
+        // Get references to the image element and buttons
+        const imageElement = document.getElementById('myImage');
+        const firstButton = document.getElementById('firstButton');
+        const secondButton = document.getElementById('secondButton');
+
+        // Function to change the image source
+        function changeImage(src) {
+            imageElement.src = src;
+        }
+
+        // Add event listeners to buttons
+        firstButton.addEventListener('click', function() {
+            changeImage(image1);
+        });
+
+        secondButton.addEventListener('click', function() {
+            changeImage(image2);
+        });
+    </script> -->
+</body>
+</html>

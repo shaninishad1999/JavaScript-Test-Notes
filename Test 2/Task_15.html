@@ -1,0 +1,36 @@
+<!-- Q15. Write a JavaScript program to display the current day and time in the   following format.										6
+Today is : Thursday.
+Date is : 21
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 15</title>
+</head>
+<body>
+    
+
+    <script>
+        // Get the current date
+        const now = new Date();
+    
+        // Array to store the days of the week
+        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    
+        // Get the current day of the week
+        const dayName = days[now.getDay()];
+    
+        // Get the current date of the month
+        const date = now.getDate();
+    
+        // Display the current day
+        console.log("Today is : " + dayName + ".");
+    
+        // Display the current date
+        console.log("Date is : " + date);
+    </script>
+    
+</body>
+</html>

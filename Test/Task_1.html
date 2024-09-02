@@ -1,0 +1,28 @@
+<!-- 
+ Q1. Write the JavaScript code to change the content and color of the HTML element below when we click button?
+
+<h1 id="demo">May the code be with you.</h1>                                                           
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task  1 </title>
+</head>
+<body>
+    <button onclick="fun()">Click button</button>
+    <h1 id="demo">May the code be with you.</h1>   
+
+    <script>
+
+        let k=document.getElementById("demo")
+      
+        function fun(){
+            k.innerHTML="New Text"
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!-- Q3. Write a function that takes the base and height of a triangle and return its area.                                                                                                                                   
+  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+</head>
+<body>
+    
+
+
+    <script>
+        function triangleArea(a, h) {
+            // Check if inputs are valid numbers
+            if (isNaN(a) || isNaN(h)) {
+                return "Invalid input. Please enter numeric values for both base and height.";
+            }
+            
+            // Calculate the area of the triangle
+            let area = (1.0 / 2) * a * h;
+            return area;
+        }
+    
+        // Prompt user to enter the base and height
+        let a = parseFloat(prompt("Enter the base of the triangle:"));
+        let h = parseFloat(prompt("Enter the height of the triangle:"));
+    
+        // Display the calculated area
+        alert(triangleArea(a, h));
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!-- 
+ Q2. Write a JavaScript program to calculate multiplication and division of two numbers (input from the user).  		
+ --><!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+    </head>
+    <body>
+        <label for="firstNumber">1st Number</label>
+        <input type="text" id="firstNumber"> <br><br>
+        <label for="secondNumber">2nd Number</label>
+        <input type="text" id="secondNumber"> <br><br>
+    
+        <button onclick="multiply()">Multiply</button>
+        <button onclick="divide()">Divide</button>
+        <h1 id="demo">The Result is: </h1>
+        <h2 id="output"></h2>
+    
+        <script>
+            function multiply() {
+                let a = parseFloat(document.getElementById("firstNumber").value);
+                let b = parseFloat(document.getElementById("secondNumber").value);
+                let result;
+    
+                if (isNaN(a) || isNaN(b)) {
+                    result = "Please enter valid numbers.";
+                } else {
+                    result = a * b;
+                }
+    
+                document.getElementById("output").innerText = result;
+            }
+    
+            function divide() {
+                let a = parseFloat(document.getElementById("firstNumber").value);
+                let b = parseFloat(document.getElementById("secondNumber").value);
+                let result;
+    
+                if (isNaN(a) || isNaN(b)) {
+                    result = "Please enter valid numbers.";
+                } else if (b === 0) {
+                    result = "Cannot divide by zero.";
+                } else {
+                    result = a / b;
+                }
+    
+                document.getElementById("output").innerText = result;
+            }
+        </script>
+    </body>
+    </html>
+    

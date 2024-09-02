@@ -1,0 +1,35 @@
+<!-- Q16. Write a java script program using nested loop to print following pattern in console.											6
+4   3   2   1
+4   3   2
+4   3
+4
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 16</title>
+</head>
+
+<body>
+
+    <script>
+        // Loop to control the rows
+        for (let i = 4; i >= 1; i--) { 
+            let row = ''; // Initialize an empty string for the row
+            
+            // Loop to control the columns in each row
+            for (let j = i; j >= 1; j--) {
+                row += j + ' '; // Append each number followed by a space
+            }
+            
+            console.log(row.trim()); // Print the row after removing trailing spaces
+        }
+    </script>
+    
+</body>
+
+</html>

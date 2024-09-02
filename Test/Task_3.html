@@ -1,0 +1,36 @@
+<!-- Q3. Write a Java Script Program to create 8-character randompassword generator.      -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+</head>
+
+<body>
+
+    <script>
+        function generateRandomPassword() {
+            const length = 8;
+            const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            let password = "";
+
+            for (let i = 0; i < length; i++) {
+                const randomIndex = Math.floor(Math.random() * charset.length);
+                password += charset[randomIndex];
+            }
+
+            return password;
+        }
+
+        // Example usage:
+        const randomPassword = generateRandomPassword();
+        console.log("Random Password:", randomPassword);
+
+    </script>
+
+    
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!-- Q25.Create an array object and Apply any six array methods in your program.    -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        let arr = [10, 20, 30, 40, 50]
+
+        arr.push(10, 20);
+        arr.pop()
+        arr.unshift(100, 200)
+        arr.shift();
+        arr.slice(2, 4)
+
+        alert(arr)
+        let slicedArray = arr.slice(2, 4);
+        alert(slicedArray);
+        arr.splice(2, 0, 6, 7); // Inserts elements 6 and 7 starting at index 2
+        alert(arr);
+
+
+    </script>
+</body>
+
+</html>

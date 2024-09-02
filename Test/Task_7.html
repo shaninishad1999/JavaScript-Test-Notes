@@ -1,0 +1,42 @@
+<!-- Q7. Write a JavaScript function to capitalize the first letter of a string.	        6
+Sample Input: cybrom technology bhopal
+Ans :Cybrom Technology Bhopal.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7</title>
+</head>
+
+<body>
+
+    <h1 id="output"></h1>
+
+    <script>
+        function capitalizeFirstLetter(string) {
+            // Split the string into words
+            const words = string.split(' ');
+
+            // Capitalize the first letter of each word and keep the rest as lowercase
+            const capitalizedWords = words.map(word =>
+                word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+            );
+
+            // Join the capitalized words back into a single string
+            return capitalizedWords.join(' ');
+        }
+
+        // Sample input
+        // const inputString = "cybrom technology bhopal";
+        const inputString = prompt("Enter String")
+
+        // Output the capitalized string
+        alert(capitalizeFirstLetter(inputString));
+
+    </script>
+</body>
+
+</html>

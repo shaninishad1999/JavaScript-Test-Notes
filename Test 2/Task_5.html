@@ -1,0 +1,26 @@
+<!-- Q5. Write a JavaScript function that reverses a number.				   6
+Example x = 32243;
+Expected Output: 34223
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+</head>
+<body>
+    
+
+    <script>
+        let num=parseInt(prompt("Enter Any Number"))
+     let sum=0;
+        while(num>0){
+            let digit=num%10;
+            sum=(sum*10)+digit
+            num=Math.floor(num/10);
+        }
+        alert(sum);
+    </script>
+</body>
+</html>

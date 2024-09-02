@@ -1,0 +1,38 @@
+<!-- Q8. Write a Java Script Program to create 10-character randompassword generator.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 8</title>
+</head>
+<body>
+    
+
+    <script>
+        function generatePassword(length) {
+            // Define all possible characters for the password
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}|;:,.<>?';
+            let password = '';
+    
+            // Loop to generate a password of the specified length
+            for (let i = 0; i < length; i++) {
+                // Get a random index from the characters string
+                const randomIndex = Math.floor(Math.random() * characters.length);
+                // Append the character at the random index to the password
+                password += characters[randomIndex];
+            }
+    
+            return password;
+        }
+    
+        // Call the function to generate a 10-character password
+        const randomPassword = generatePassword(10);
+        
+        // Display the generated password
+        alert('Generated Password: ' + randomPassword);
+    </script>
+    
+</body>
+</html>

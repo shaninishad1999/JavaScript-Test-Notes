@@ -1,0 +1,41 @@
+<!-- Q5. Write a JavaScript function to check whether a string is blank or not.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+</head>
+
+<body>
+
+
+
+    <script>
+   function isStringBlank(inputString) {
+ // Trim the string to remove leading and trailing whitespace
+    const trimmedString = inputString.trim();
+    if (trimmedString.length === 0) {
+        
+        return true;  // The string is blank
+    } else {
+        return false; // The string is not blank
+    }
+}
+
+
+const userInput = prompt("Please enter a string:");
+
+// Check if the input string is blank
+if (isStringBlank(userInput)) {
+    alert("The input string is blank.");
+} else {
+    alert("The input string is not blank.");
+}
+
+    </script>
+</body>
+
+</html>
