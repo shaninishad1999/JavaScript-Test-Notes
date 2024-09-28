@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
+    <link rel="stylesheet" href="/dashborad.css">
+
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="left-navbar">
+
+            <a href="#">Admin Dashboard</a>
+
+            <i class="fa-solid fa-bars" onclick="fun()" id="menu-bar"></i>
+        </div>
+
+        <!-- rigth navbar start -->
+        <div class="right-navbar" id="right-navbar">
+
+            <label for="search" >
+
+            </label>
+                &nbsp;&nbsp;&nbsp;
+
+                <i class="fa-solid fa-user"></i>
+                <!-- dropdown start -->
+                <div class="dropdown">
+                    <button class="dropbtn"> <i class="fa-solid fa-caret-down" onclick="toggleUserInfo()"></i></button>
+                    <div id="user-info" style="display: none;">
+                        <div class="dropdown-content">
+                            <li class="changeUserId">UserId</li>
+                            <li>Setting</li>
+                            <li onclick="logout()">Logout</li>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- drowpdown close - ->
+
+        </div>
+        <-- right navebar close -->
+
+    </nav>
+
+    <div class="head-section">
+
+        <aside class="sidebar-section" id="sidebar">
+
+
+            <div class="sidebar">
+
+                <div class="dashboard hov" onclick="window.location.href='/Dashboard.html'" style="cursor: pointer;">
+                    <span class="material-symbols-outlined">grid_view</span>&nbsp;Dashboard
+                </div>
+
+                <div class="table hov" onclick="window.location.href='/display.html'" style="cursor: pointer;">
+                    <span class="material-symbols-outlined">table</span>&nbsp;Show Customer Data
+                </div>
+
+           
+
+                <div class="update hov" onclick="window.location.href='/update.html'" style="cursor: pointer;">
+                    <span class="material-symbols-outlined">arrow_insert</span>&nbsp;Update Customer Data
+                </div>
+
+                <div class="login hov" onclick="window.location.href='/login/index.html'" style="cursor: pointer;">
+                    <span class="material-symbols-outlined">login</span>&nbsp;Login
+                </div>
+
+                <div class="sign-up hov" onclick="window.location.href='/sign-up/index.html'" style="cursor: pointer;">
+                    <span class="material-symbols-outlined">logout</span>&nbsp;Sign-Up
+                </div>
+
+
+
+            </div>
+
+
+
+        </aside>
+
+        <!--  dashboard start  -->
+        <div id="dashboard">
+            <div class="dashboard-element">
+                <p id="para" >Welcome <span class="changeUser" >UserName</span> </p>
+                <p  style="font-size: 20px; padding-bottom: 50px; margin-top: 40px;">An admin responsible for managing employee data, accurate collection, organization, and updating of employee records. <br>
+                    They ensure that sensitive information is securely stored and easily accessible when needed. The admin handles tasks such as <br> maintaining  attendance,
+                    
+                    performance reviews,and payroll data. Additionally, they support compliance with HR policies.</p>
+                
+                   
+                
+                
+            </div>
+            <div class="dashboard-container">
+                <div class="dashboard-box">
+                    <div class="dashboard-content">
+
+                        <h1>Total Revenue</h1><br>
+                        <p id="count">5000</p>
+                    </div>
+
+                </div>
+                <div class="dashboard-box">
+                    <div class="dashboard-content">
+
+                        <h1>Occupied Rooms</h1><br>
+                        <p>1050</p>
+                    </div>
+                </div>
+                <div class="dashboard-box">
+                    <div class="dashboard-content">
+
+                        <h1>Available Rooms</h1><br>
+                        <p>450</p>
+                    </div>
+                </div>
+                <!-- <div class="dashboard-box">
+                    <div class="dashboard-content">
+
+                        <h1>Daily Employee</h1><br>
+                        <p>50</p>
+                    </div>
+                </div> -->
+            </div>
+           
+
+        </div>
+        <!-- dashboard close -->
+
+
+    </div>
+    <!-- main section close -->
+
+
+
+    <script src="index.js"></script>
+
+
+    <script>
+        window.onload = function () {
+            const storedEmail = localStorage.getItem("userEmail");
+            const storedEmail_1 = localStorage.getItem("fname");
+           
+            if (storedEmail) {
+                const userIdElement = document.querySelector(".changeUserId");
+                const userIdElement_1 = document.querySelector(".changeUser");
+                if (userIdElement) {
+                    userIdElement.innerHTML = storedEmail;
+                    userIdElement_1.innerHTML=storedEmail_1;
+
+
+                } else {
+                    console.error("Element with ID 'changeUserId' not found.");
+                }
+            }
+        };
+
+        // localStorage.clear();
+    </script>
+
+
+    <script src="/index.js"></script>
+</body>
+
+</html>

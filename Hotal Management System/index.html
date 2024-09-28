@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">Hotel Booking</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#booking">Book Now</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>Welcome to Our Hotel Booking Service</h1>
+        <p>Your comfort is our priority</p>
+        <a href="#booking" class="cta">Book Now</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 style="font-size: 3rem; color: rgb(26, 235, 124);">About Us</h2>
+        <!-- <p>We provide the best hotel booking experience with a variety of room options, comfortable amenities, and excellent customer service.</p> -->
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-container">
+            <div class="service pic1">
+                <h3>Single Rooms</h3>
+                <p>Comfortable and spacious rooms for a luxurious stay.</p>
+                <a href="#booking" class="cta newbtn">Book Now</a>
+            </div>
+            <div class="service pic2">
+                <h3>Double Rooms</h3>
+                <p>Comfortable and spacious rooms for a luxurious stay.</p>
+                <a href="#booking" class="cta newbtn">Book Now</a>
+            </div>
+            <div class="service pic3">
+                <h3>Luxury Rooms</h3>
+                <p>Comfortable and spacious rooms for a luxurious stay.</p>
+                <a href="#booking" class="cta newbtn">Book Now</a>
+            </div>
+
+        </div>
+        <div class="services-container">
+         
+            <div class="service">
+                <h3>Free Wi-Fi</h3>
+                <p>High-speed internet access for all guests.</p>
+            </div>
+            <div class="service">
+                <h3>24/7 Support</h3>
+                <p>Our support team is available round the clock.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking">
+        <h2 style="color: #12f719;">Book Your Room</h2>
+        <form id="bookingForm" style="text-align: left;">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" required>
+    
+            <label for="roomType">Room Type:</label>
+            <select id="roomType" name="roomType" required>
+                <option value="">Select Room Type</option>
+                <option value="single">Single - ₹1000</option>
+                <option value="double">Double - ₹1500</option>
+                <option value="suite">Suite - ₹3000</option>
+            </select>
+    
+            <label for="checkIn">Check-In:</label>
+            <input type="date" id="checkIn" name="checkIn" required>
+    
+            <label for="checkOut">Check-Out:</label>
+            <input type="date" id="checkOut" name="checkOut" required>
+    
+            <label for="paidAmount">Paid Amount:</label>
+            <input type="number" id="paidAmount" name="paidAmount" min="0" step="any" required>
+    
+            <label for="dueAmount">Due Amount:</label>
+            <input type="number" id="dueAmount" name="dueAmount" min="0" step="any" readonly>
+    
+            <label for="paymentStatus">Payment Status:</label>
+            <select id="paymentStatus" name="paymentStatus" required onchange="updatePaidAmount()">
+                <option value="paid">Not Updated</option>
+                <option value="paid">Paid</option>
+                <option value="pending">Pending</option>
+            </select>
+    
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="3" placeholder="Any additional requests..."></textarea>
+    
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+    
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: contact@hotelbooking.com</p>
+        <p>Phone: +123-456-7890</p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Hotel Booking. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById("roomType").addEventListener("change", function () {
+            const roomType = this.value;
+            let roomCost = 0;
+
+            // Set room cost based on the selected room type
+            if (roomType === "single") {
+                roomCost = 1000;
+            } else if (roomType === "double") {
+                roomCost = 1500;
+            } else if (roomType === "suite") {
+                roomCost = 3000;
+            }
+
+            // Display the room cost in the "Due Amount" field
+            document.getElementById("dueAmount").value = roomCost;
+        });
+
+
+       
+        function updatePaidAmount() {
+        const paidAmountInput = document.getElementById('paidAmount');
+        const paymentStatus = document.getElementById('paymentStatus').value;
+        const roomType = document.getElementById('roomType').value;
+
+        // Set paid amount based on selected room type if "Paid" is selected
+        if (paymentStatus === 'paid' && roomType) {
+            let roomPrice;
+
+            switch (roomType) {
+                case 'single':
+                    roomPrice = 1000;
+                    break;
+                case 'double':
+                    roomPrice = 1500;
+                    break;
+                case 'suite':
+                    roomPrice = 3000;
+                    break;
+                default:
+                    roomPrice = 0;
+            }
+
+            paidAmountInput.value = roomPrice;
+        } else {
+            paidAmountInput.value = '';
+        }
+    }
+    </script>
+</body>
+
+</html>
+
