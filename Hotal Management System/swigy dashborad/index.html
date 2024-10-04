@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Food Delivery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h2 class="logo">Food Delivery</h2>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Online Food Delivery</h1>
+        <div id="food-section">
+            <div class="food-item">
+                <img src="/pizza.jfif" alt="Pizza">
+                <h3>Pizza</h3>
+                <p>Price: $10</p>
+                <button onclick="orderFood('Pizza', 10)">Order Food</button>
+            </div>
+            <div class="food-item">
+                <img src="/burger.jfif" alt="Burger">
+                <h3>Burger</h3>
+                <p>Price: $8</p>
+                <button onclick="orderFood('Burger', 8)">Order Food</button>
+            </div>
+            <div class="food-item">
+                <img src="/sushi.jfif" alt="Sushi">
+                <h3>Sushi</h3>
+                <p>Price: $12</p>
+                <button onclick="orderFood('Sushi', 12)">Order Food</button>
+            </div>
+            <div class="food-item">
+                <img src="salad.jfif" alt="Salad">
+                <h3>Salad</h3>
+                <p>Price: $7</p>
+                <button onclick="orderFood('Salad', 7)">Order Food</button>
+            </div>
+            <div class="food-item">
+                <img src="/burger.jfif" alt="Burger">
+                <h3>Burger</h3>
+                <p>Price: $8</p>
+                <button onclick="orderFood('Burger', 8)">Order Food</button>
+            </div>
+            <div class="food-item">
+                <img src="/pizza.jfif" alt="Pizza">
+                <h3>Pizza</h3>
+                <p>Price: $10</p>
+                <button onclick="orderFood('Pizza', 10)">Order Food</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function orderFood(foodItem, price) {
+            window.location.href = `form.html?foodItem=${encodeURIComponent(foodItem)}&foodPrice=${price}`;
+        }
+    </script>
+</body>
+</html>
